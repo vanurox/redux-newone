@@ -17,7 +17,7 @@ const state = {
     admissions: [
         {
             name: 'Varun',
-            age: 20,
+            age: 28,
             gender: 'male'
         }
     ]
