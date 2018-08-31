@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import { connect } from 'react-redux';
+
 import './App.css';
 
 class App extends Component {
+  
   render() {
+    console.log(this.props);
     return (
       <div className="App">
         <header className="App-header">
@@ -11,11 +15,19 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          Count is { this.props.count } with students near about { this.props.students }
         </p>
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return state;
+}
+
+
+
+export default connect(mapStateToProps)(App);
+
+

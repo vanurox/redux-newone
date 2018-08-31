@@ -23,29 +23,15 @@ const state = {
     ]
 };
 
-const store = createStore(reducer, state);
-console.log(store.getState());
-store.dispatch(
-    {
-        type:'INC'
-    }
-);
-store.dispatch(
-    {
-        type: 'INC'
-    }
-);
-console.log(store.getState());
+const store = createStore(
+            reducer, 
+            state,
+            window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+        );
 
-store.dispatch(
-    {
-        type: 'DEC'
-    }
-);
-console.log(store.getState());
 
 ReactDOM.render(
-            <Provider>
+            <Provider store={store}>
                 <App />
             </Provider>
             , document.getElementById('root'));
